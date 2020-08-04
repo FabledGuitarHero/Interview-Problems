@@ -15,4 +15,5 @@ Constraints: Code must be a 4 digit number, and must not have been used before. 
 
 ### Solution:
 **Data Structures:**  Trie or Binary Search Tree.  (For a good resource on Tires, click [here](https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014) ).
+
 **Random Number Generator:** Created class called *Random* that takes a RNG as a template and handles the RNG generation.   This example uses *std::minstd_rand* but can handle *Mersenne* and *Mersenne 64bit*. (Step is not necessary, but generates a better RN than using rand()).
