@@ -46,9 +46,13 @@ std::string init_num(unsigned long n){
 int main(int argc, const char * argv[]) {
     
     /*
-        1. Generate string of rando's
+        Problem:  Given an unending string of random numbers,
+                  attempt to crack a safe code without repeating
+                  numbers already attempted through brute force.
+     
+        1. Generate string of random numbers
         2. Randomly generate key number
-        3. Use Trie/BTree
+        3. Use Trie or BTree to keep track of numbers used
         4. Substr of 4 numbers
            4a. Cast to int
            4b. Check Trie/BTree if used before
@@ -85,6 +89,8 @@ int main(int argc, const char * argv[]) {
         index++;
         srch = num.substr(index, 4);
         
+        //If string is almost empty, generate new
+        //  string of digits and append to reamaining
         if(index+4 == num.length()){
             std::string tmp = init_num(10);
             num = srch + tmp;
