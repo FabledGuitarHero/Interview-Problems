@@ -1,3 +1,5 @@
+#Safe Cracking Algorithm
+
 This was an interview question I received from a (very) large tech company.
 
 Problem:  Given an unending string of numbers, attempt to brute force your way into a safe.
