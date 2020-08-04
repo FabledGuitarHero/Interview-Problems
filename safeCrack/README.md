@@ -1,4 +1,4 @@
-#Safe Cracking Algorithm
+# Safe Cracking Algorithm
 
 This was an interview question I received from a (very) large tech company.
 
