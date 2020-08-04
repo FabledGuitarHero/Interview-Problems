@@ -8,7 +8,10 @@ Constraints: Code must be a 4 digit number, and must not have been used before. 
 
 ### Example:
 ```
-      1234      5678910
-1 <-  234    5678910
-      2345    <-  67891011
+      1234    5678910
+1 <-  234     5678910
+      2345 <- 67891011
 ```
+
+### Solution:
+**Data Structures:**  Trie or Binary Search Tree.  For a good resource on Tires, click [here](https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014)
