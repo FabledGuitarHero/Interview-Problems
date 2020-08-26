@@ -13,7 +13,17 @@ Constraints: Code must be a 4 digit number, and must not have been used before. 
       2345 <- 67891011
 ```
 
-### Solution:
-**Data Structures:**  Trie or Binary Search Tree.  (For a good resource on Tires, click [here](https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014) ).
+### Pre-requesits:
+**Data Structures:**  Trie or Binary Search Tree.  (For a good resource on Trie, click [here](https://medium.com/basecs/trying-to-understand-tries-3ec6bede0014) ).
 
 **Random Number Generator:** Created class called *Random* that takes a RNG as a template and handles the RNG generation.   This example uses *std::minstd_rand* but can handle *Mersenne* and *Mersenne 64bit*. (Step is not necessary, but generates a better RN than using ```rand()```).
+
+### Solution:
+1)  Generate  a string of random numbers
+2)  Iterate the sub-string.
+3)  Check if sub-string is in the Trie, if so, skip
+4)  Check if the sub-string matches the key
+5)  If not, add to Trie.
+6)  Repeat
+
+**Implimentation note:**  Added an extra step at the end so that if the end of the string was reached and the key was not found, it would generate another set of random numbers and append it to the current string.
