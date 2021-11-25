@@ -9,18 +9,8 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <sstream>
 
-using namespace std;
-
-void print_this_thing(std::map<std::string, std::vector<std::string>> mp){
-    for (auto i : mp){
-        cout << i.first << " ";
-        for (auto n : i.second){
-            cout << n << " ";
-        }
-        cout << endl;
-    }
-}
 
 std::vector<std::vector<std::string>> domainForwarding(std::vector<std::vector<std::string>> redirects) {
     std::map<std::string, std::vector<std::string>> d_red;
@@ -33,7 +23,6 @@ std::vector<std::vector<std::string>> domainForwarding(std::vector<std::vector<s
         //Searches keys for destination domain
         //If it firnds the key, add to the back of the stack
         if (it != d_red.end()){
-            cout << " here " << endl;
             it->second.push_back(arr[0]);
         }
         //If it reaches the end without finding a key,
@@ -56,8 +45,6 @@ std::vector<std::vector<std::string>> domainForwarding(std::vector<std::vector<s
         }
     }
     
-    //print_this_thing(d_red);
-    
     std::vector<std::vector<std::string>> test;
     for (auto i : d_red){
         std::vector<std::string> tmp {i.first};
@@ -69,6 +56,18 @@ std::vector<std::vector<std::string>> domainForwarding(std::vector<std::vector<s
     
 }
 
+void print_answer(std::vector<std::vector<std::string>> ret){
+    std::stringstream ss;
+    
+    for (auto i : ret){
+        for (auto j  : i )
+            ss << j << " ";
+        ss << "\n";
+    }
+    
+    std::cout << ss.str() << std::endl;
+}
+
 
 int main(int argc, const char * argv[]) {
     
@@ -78,11 +77,7 @@ int main(int argc, const char * argv[]) {
                                                  {"godaddy.ne","godaddy.net"}};
     
     std::vector<std::vector<std::string>> ret = domainForwarding(arr);
-    for (auto i : ret){
-        for (auto j  : i )
-            cout << j << " ";
-        cout << endl;
-    }
+    print_answer(ret);
     
     return 0;
 }
